@@ -6,9 +6,9 @@ const path = require('path');
 // Налаштування параметрів командного рядка
 const prog = new Command();
 prog
-    .Option('-h, --host <host>', 'server host', 'localhost')
-    .Option('-p, --port <port>', 'server port', '5000' )
-    .Option('-c, --cache <cacheDir>', 'cache directory','./cache');
+    .option('-h, --host <host>', 'server host', 'localhost')
+    .option('-p, --port <port>', 'server port', '5000' )
+    .option('-c, --cache <cacheDir>', 'cache directory','./cache');
 
 prog.parse(process.argv);
 const opt = prog.opts();
