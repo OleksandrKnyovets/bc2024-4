@@ -35,11 +35,7 @@ if (!opt.cache) { //якщо папки з кешом не вказана
 
 //створення директорії кешу
 fs.promises.mkdir(opt.cache, {recursive: true}) //створення директорії
-    .then(() => console.log('Cache directory is ready')) 
-    .catch(error => { //обробка помилки
-        console.error('Error creating cache', error); //повідомлення про помилку
-        process.exit();  
-    });
+    .then(() => console.log('Cache directory is ready'));
 
 //функція обробки GET-запиту
 function Get(code, fileX, res) { //code - код помилки, fileX - шлях до файлу, res - об'єкт відповіді
@@ -126,5 +122,5 @@ const server = http.createServer((req, res) => { //req - запит, res - ві�
     }
 });
 
-//запуск сервера
-server.listen (opt.port, opt.host, () => console.log(`Server running http://${opt.host}:${opt.port}/`)); 
+//запуск сервера (відразу виводить кашак 200)
+server.listen (opt.port, opt.host, () => console.log(`Server running http://${opt.host}:${opt.port}/${200}`)); 
